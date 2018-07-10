@@ -1,0 +1,22 @@
+npm install -g @angular/cli@latest
+ng new <appname> --routing --style=scss --nospec --skip-tests
+(ha nem működik: npm cache clean --force)
+
+-- ADD MATERIAL DESIGN --
+npm i angular-bootstrap-md
+ng add @angular/material
+npm i @angular/cdk
+ng g @angular/material:material-nav --name=my-nav
+ng g @angular/material:material-dashboard --name=my-dashboard
+ng g @angular/material:material-table --name=my-table
+
+-- ADD REDUX --
+npm install --save @ngrx/store
+npm i rxjs-compat
+
+ng g guard auth --> guard service generálás
+npm i angular-bootstrap-md --save
+
+-- SOCKET.IO --
+npm install socket.io-client --save
+npm install @types/socket.io-client

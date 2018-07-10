@@ -1,0 +1,15 @@
+.spinnerLoader {
+    position: absolute;
+    z-index: 1000000;
+    width: 100vw;
+    height: 50vw;
+    background: azure;
+}
+
+.spinnerLoader i {
+    font-size: 30px
+}
+
+.spinnerLoader span {
+    margin-left: 12px;
+}
