@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+// @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav.navbar {
+    z-index: 10001 !important;
+}
+
+.btn.btn-sm {
+    padding: 0.3rem 1.0rem;
+    font-size: 0.9rem;
+}

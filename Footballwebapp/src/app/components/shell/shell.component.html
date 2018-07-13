@@ -1,5 +1,9 @@
 <app-navigation></app-navigation>
 
 <div class="container mt-2">
+    <div class="d-flex justify-content-center align-items-center spinnerLoader" *ngIf="loading">
+        <i class="fa fa-refresh fa-spin"></i>
+        <span>Loading...</span>
+    </div>
     <router-outlet></router-outlet>
 </div>

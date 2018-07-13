@@ -1,0 +1,18 @@
+.spinnerLoader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    background: #5f9ea0e6;
+}
+
+.spinnerLoader i {
+    font-size: 30px
+}
+
+.spinnerLoader span {
+    margin-left: 12px;
+}

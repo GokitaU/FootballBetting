@@ -1,0 +1,131 @@
+/* only betting */
+
+.bg-light {
+    border-color: #7f878e !important;
+}
+
+.border-dark {
+    border-color: #2121213b !important;
+}
+
+.match-container {
+    background-color: white;
+    color: black;
+}
+
+.img-flag {
+    max-width: 40px;
+}
+
+.information-container {
+    background-color: #adf1d7;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.finishmatch {
+    background-color: #cfe2f3 !important;
+}
+
+.mobile-flag {
+    visibility: hidden;
+}
+
+.hometeam {
+    overflow-wrap: break-word;
+    overflow: auto;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.betting {}
+
+.betting button {
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 0;
+}
+
+.awayteam {
+    overflow-wrap: break-word;
+    overflow: auto;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.matchresult {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.openmorebetting {
+    background-color: aliceblue;
+    font-size: 0.8em;
+}
+
+.openmorebetting:hover {
+    cursor: pointer;
+}
+
+.morebetting-container {
+    margin: 0 auto;
+    background-color: aliceblue;
+}
+
+.morebetting-container button {
+    border-radius: 0;
+}
+
+.morebetting-title {
+    font-size: 1em;
+    margin-bottom: 0rem;
+    color: black;
+}
+
+.morebetting-text {
+    font-size: 0.8em;
+    min-width: 125px;
+}
+
+.bettingbox {
+    padding: 0 4px 10px 3px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    .matchresult {
+        visibility: hidden;
+    }
+}
+
+
+/* MOBILE VIEW */
+
+@media (max-width: 500px) {
+    .betting button {
+        font-size: 1em;
+    }
+    .match-container {
+        font-size: 0.7em;
+    }
+    .img-flag {
+        max-width: 30px;
+    }
+    .mobile-flag {
+        visibility: visible;
+    }
+    .desktop-flag {
+        display: none;
+    }
+    .information-container {
+        padding: 3px 10px;
+    }
+    .morebetting-container button {
+        font-size: 1em;
+    }
+}
