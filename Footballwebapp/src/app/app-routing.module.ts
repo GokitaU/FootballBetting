@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: '', component: ShellComponent,
     children: [
-      { path: 'home', component: HomeComponent , resolve: { list: HomeResolverService }},
+      //{ path: 'home', component: HomeComponent , resolve: { list: HomeResolverService }},
+      { path: 'home', component: HomeComponent},
       { path: 'profile', component: ProfileComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
