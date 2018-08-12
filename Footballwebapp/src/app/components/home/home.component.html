@@ -1,70 +1,163 @@
 <div id="content">
     <div class="container">
+
+        <!-- SLIDER  -->
         <div class="row">
+            <!--Carousel Wrapper-->
+            <mdb-carousel class="bannerimg" [isControls]="true" [animation]="'slide'">
+                <!--First slide-->
+                <mdb-carousel-item>
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center justify-content-center rgba-black-strong pt-2 pb-5 px-4 w-100">
+                        <div class="w-100 p-3">
+                            <div class="front-match d-flex flex-column justify-content-center p-3">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="flex-fill d-none d-sm-block">
+                                        <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
+                                    </div>
+                                    <div class="d-felx flex-column">
+                                        <div class="flex-fill">
+                                            <h3 class="card-title pt-2"><strong>Brazíla - Svájc</strong></h3>
+                                        </div>
+                                        <div class="flex-fill">
+                                            <p>Ma 16:00</p>
+                                        </div>
+                                    </div>
+                                    <d class="flex-fill d-none d-sm-block">
+                                        <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
+                                    </d>
+                                </div>
+                                <div class="front-match-bets d-flex flex-row justify-content-around">
+                                    <button type="button" class="btn btn-sm btn-primary" (click)="modalOpen(5.23)">5.23</button>
+                                    <button type="button" class="btn btn-sm btn-primary" (click)="modalOpen(1.04)">1.04</button>
+                                    <button type="button" class="btn btn-sm btn-primary" (click)="modalOpen(2.21)">2.21</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                </mdb-carousel-item>
+                <!--/First slide-->
+                <!--Second slide-->
+                <mdb-carousel-item>
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center justify-content-center rgba-black-strong pt-2 pb-5 px-4 w-100">
+                        <div class="w-100 p-3">
+                            <div class="front-match d-flex flex-column justify-content-center p-3">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="flex-fill d-none d-sm-block">
+                                        <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
+                                    </div>
+                                    <div class="d-felx flex-column">
+                                        <div class="flex-fill">
+                                            <h3 class="card-title pt-2"><strong>Magyarország - Oroszország</strong></h3>
+                                        </div>
+                                        <div class="flex-fill">
+                                            <p>Ma 18:00</p>
+                                        </div>
+                                    </div>
+                                    <d class="flex-fill d-none d-sm-block">
+                                        <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
+                                    </d>
+                                </div>
+                                <div class="front-match-bets d-flex flex-row justify-content-around">
+                                    <button type="button" class="btn btn-sm btn-primary">5.23</button>
+                                    <button type="button" class="btn btn-sm btn-primary">1.04</button>
+                                    <button type="button" class="btn btn-sm btn-primary">2.21</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                </mdb-carousel-item>
+                <!--/Second slide-->
+                <!--Third slide-->
+                <mdb-carousel-item>
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center justify-content-center rgba-black-strong pt-2 pb-5 px-4 w-100">
+                        <div class="w-100 p-3">
+                            <div class="front-match d-flex flex-column justify-content-center p-3">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="flex-fill d-none d-sm-block">
+                                        <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
+                                    </div>
+                                    <div class="d-felx flex-column">
+                                        <div class="flex-fill">
+                                            <h3 class="card-title pt-2"><strong>Fradi - Újpest</strong></h3>
+                                        </div>
+                                        <div class="flex-fill">
+                                            <p>Holnap 16:00</p>
+                                        </div>
+                                    </div>
+                                    <d class="flex-fill d-none d-sm-block">
+                                        <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
+                                    </d>
+                                </div>
+                                <div class="front-match-bets d-flex flex-row justify-content-around">
+                                    <button type="button" class="btn btn-sm btn-primary">5.23</button>
+                                    <button type="button" class="btn btn-sm btn-primary">1.04</button>
+                                    <button type="button" class="btn btn-sm btn-primary">2.21</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                </mdb-carousel-item>
+                <!--/Third slide-->
+            </mdb-carousel>
+            <!--/.Carousel Wrapper-->
+        </div>
+
+        <div class="row d-none">
             <!-- Card -->
             <div class="card card-image mb-3 bannerimg">
 
                 <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div>
-                        <h3 class="card-title pt-2"><strong>Kiemelt mérkőzések</strong></h3>
+                <div class="text-white text-center d-flex align-items-center justify-content-center rgba-black-strong pt-2 pb-5 px-4">
+                    <div class="w-100">
+                        <h3 class="card-title pt-2"><strong>Kiemelt fogadások</strong></h3>
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <!-- Card -->
-                                <div class="card">
-                                    <!-- Card content -->
-                                    <div class="card-body">
-
-                                        <!-- Title -->
-                                        <h4 class="card-title brown-text">Magyarország - Brazília</h4>
-                                        <hr>
-                                        <!-- Text -->
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                                <div class="front-match d-flex flex-column justify-content-center p-3">
+                                    <div class="front-match-title">
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <div class="flex-fill d-none d-sm-block">
+                                                <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
+                                            </div>
+                                            <div class="front-match-team flex-fill p-2 h5">Magyarország - Franciaország</div>
+                                            <d class="flex-fill d-none d-sm-block">
+                                                <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
+                                            </d>
+                                        </div>
                                     </div>
-
-                                    <!-- Card footer -->
-                                    <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
-                                        <ul class="list-unstyled list-inline font-small">
-                                            <li class="list-inline-item pr-2 white-text"><i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
-                                            <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fa fa-comments-o pr-1"></i>12</a></li>
-                                            <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fa fa-facebook pr-1"> </i>21</a></li>
-                                            <li class="list-inline-item"><a href="#" class="white-text"><i class="fa fa-twitter pr-1"> </i>5</a></li>
-                                        </ul>
+                                    <div class="front-match-bets d-flex flex-row justify-content-around">
+                                        <button type="button" class="btn btn-sm btn-primary">1.23</button>
+                                        <button type="button" class="btn btn-sm btn-primary">2.23</button>
+                                        <button type="button" class="btn btn-sm btn-primary">3.21</button>
                                     </div>
-
                                 </div>
-                                <!-- Card -->
                             </div>
                             <div class="col-12 col-md-6">
-                                <!-- Card -->
-                                <div class="card">
-                                    <!-- Card content -->
-                                    <div class="card-body">
-
-                                        <!-- Title -->
-                                        <h4 class="card-title brown-text">Mexikó - Japán</h4>
-                                        <hr>
-                                        <!-- Text -->
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                                <div class="front-match d-flex flex-column justify-content-center p-3">
+                                    <div class="front-match-title">
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <div class="flex-fill d-none d-sm-block">
+                                                <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
+                                            </div>
+                                            <div class="front-match-team flex-fill p-2 h5">Magyarország - Franciaország</div>
+                                            <d class="flex-fill d-none d-sm-block">
+                                                <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
+                                            </d>
+                                        </div>
                                     </div>
-
-                                    <!-- Card footer -->
-                                    <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
-                                        <ul class="list-unstyled list-inline font-small">
-                                            <li class="list-inline-item pr-2 white-text"><i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
-                                            <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fa fa-comments-o pr-1"></i>12</a></li>
-                                            <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fa fa-facebook pr-1"> </i>21</a></li>
-                                            <li class="list-inline-item"><a href="#" class="white-text"><i class="fa fa-twitter pr-1"> </i>5</a></li>
-                                        </ul>
+                                    <div class="front-match-bets d-flex flex-row justify-content-around">
+                                        <button type="button" class="btn btn-sm btn-primary">1.23</button>
+                                        <button type="button" class="btn btn-sm btn-primary">2.23</button>
+                                        <button type="button" class="btn btn-sm btn-primary">3.21</button>
                                     </div>
-
                                 </div>
-                                <!-- Card -->
                             </div>
                         </div>
-                        <a class="btn btn-pink" data-toggle="modal" data-target="#basicExampleModal"><i class="fa fa-clone left"></i> View project</a>
                     </div>
                 </div>
                 <!-- Content -->
@@ -72,12 +165,14 @@
             <!-- Card -->
         </div>
 
+        <!-- MÉRKŐZÉSLISTA  -->
+        <hr />
         <div class="row">
-            <div class="col-12">
-                <h2>Mai mérkőzések</h2>
+            <div class="col-12 text-center m-3">
+                <h2 class="text-white">Mai mérkőzések</h2>
             </div>
             <div class="col-12">
-                <div class="match-container border border-dark">
+                <div class="match-container border border-dark animated fadeIn">
                     <div class="d-flex justify-content-between information-container finishmatch">
                         <div class="mobile-flag">
                             <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
@@ -94,9 +189,9 @@
                             <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag desktop-flag">
                         </div>
                         <div class="betting flex-fill text-center p-1 d-flex justify-content-around">
-                            <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                            <button type="button" class="btn btn-sm btn-primary">2.23</button>
-                            <button type="button" class="btn btn-sm btn-primary">3.21</button>
+                            <button type="button" (click)="modalOpen(1.23)" class="btn btn-sm btn-primary">1.23</button>
+                            <button type="button" (click)="modalOpen(2.23)" class="btn btn-sm btn-primary">2.23</button>
+                            <button type="button" (click)="modalOpen(3.23)" class="btn btn-sm btn-primary">3.21</button>
                         </div>
                         <div class="flex-fill text-center">
                             <img src="./assets/Flags/england.png" alt="flag" class="img-flag desktop-flag">
@@ -150,7 +245,7 @@
                     </div>
                 </div>
 
-                <div class="match-container border border-dark mt-3">
+                <div class="match-container border border-dark mt-3 animated fadeIn">
                     <div class="d-flex justify-content-between information-container">
                         <div class="mobile-flag">
                             <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
@@ -227,23 +322,22 @@
     </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade left" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-full-height modal-left modal-notify modal-success" role="document">
+<!-- Betting Modal -->
+<div mdbModal #bettingModal="mdbModal" [config]="{ignoreBackdropClick: true}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="bettingModal.hide()">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
-                ...
+                {{bet}}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="bettingModal.hide()" mdbWavesEffect>Close</button>
+                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>
             </div>
         </div>
     </div>

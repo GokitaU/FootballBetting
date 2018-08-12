@@ -10,6 +10,6 @@ export class HomeResolverService implements Resolve<any[]> {
   constructor(private dataservice: DataService) { }
 
   resolve(): Promise<any[]> {
-    return this.dataservice.getPosts();
+    return this.dataservice.getMatches();
   }
 }

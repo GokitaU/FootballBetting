@@ -1,6 +1,7 @@
 /* only betting */
 
 .bannerimg {
+    width: 100%;
     background-position: center;
     background-image: url("/assets/img/bg.jpg");
 }
@@ -96,6 +97,15 @@
     padding: 0 4px 10px 3px;
 }
 
+.front-match .img-flag {
+    max-width: 60px;
+}
+
+.front-match-bets {
+    width: 20%;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
@@ -132,5 +142,8 @@
     }
     .morebetting-container button {
         font-size: 1em;
+    }
+    .front-match {
+        margin-bottom: 5px;
     }
 }

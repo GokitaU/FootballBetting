@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Settings } from '../app.settings';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private appsettings:Settings) { }
 
-  getPosts = (): Promise<any[]> => {
+  getMatches = (): Promise<any[]> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        fetch('https://jsonplaceholder.typicode.com/comments')
-          .then(data => {
-            resolve(data.json());
-          }).catch((err) => {
-            reject(err);
-          });
+        // fetch('https://jsonplaceholder.typicode.com/comments')
+        //   .then(data => {
+        //     resolve(data.json());
+        //   }).catch((err) => {
+        //     reject(err);
+        //   });
+        resolve();
       }, 2000);
     });
   }

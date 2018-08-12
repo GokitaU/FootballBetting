@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   constructor(private dataservice:DataService) { }
 
   async ngOnInit() {
-    this.posts = await this.dataservice.getPosts();
+
   }
 
 }

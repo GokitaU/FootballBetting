@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ModalDirective } from 'angular-bootstrap-md'
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,11 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   postList:any[];
+  bet: number;
+  @ViewChild('bettingModal') bettingModal: ModalDirective;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     //this.postList = this.route.snapshot.data['list'];
+  }
+
+  modalOpen(bet: number){
+    this.bet = bet;
+    this.bettingModal.show();
   }
 
 }
