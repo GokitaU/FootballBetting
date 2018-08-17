@@ -1,8 +1,7 @@
 <div id="content">
     <div class="container">
-
         <!-- SLIDER  -->
-        <div class="row">
+        <div class="row" *ngIf="isBannerShow">
             <!--Carousel Wrapper-->
             <mdb-carousel class="bannerimg" [isControls]="true" [animation]="'slide'">
                 <!--First slide-->
@@ -166,7 +165,7 @@
         </div>
 
         <!-- MÉRKŐZÉSLISTA  -->
-        <hr />
+        <hr *ngIf="isBannerShow" />
         <div class="row">
             <div class="col-12 text-center m-3">
                 <h2 class="text-white">Mai mérkőzések</h2>
