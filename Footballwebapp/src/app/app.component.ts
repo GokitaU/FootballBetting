@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import { AppService } from './services/app.service';
+import { ModalDirective } from 'angular-bootstrap-md';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +11,24 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationCancel, Naviga
 })
 export class AppComponent {
   loading = false;
+  msg: string;
+  @ViewChild('messageModal') messageModal: ModalDirective;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private appService: AppService, private dataService: DataService) {
     router.events.subscribe((routerEvent: Event) => {
       this.checkRouterEvent(routerEvent);
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.appService.checkDatabase();
+    let teams = await this.dataService.getTeams();
+    console.log(teams);
+  }
+
+  msgModal(text: string){
+    this.msg = text;
+    this.messageModal.show();
   }
 
   checkRouterEvent(routerEvent: Event): void {

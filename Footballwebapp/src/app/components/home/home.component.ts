@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
 import { ActivatedRoute } from '@angular/router';
+import { Match } from '../../models/match.model';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  postList: any[];
+  matchList: Match[];
   isBannerShow: boolean;
   bet: number;
   @ViewChild('bettingModal') bettingModal: ModalDirective;
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.isBannerShow = false;
-    // this.postList = this.route.snapshot.data['list'];
+    this.matchList = this.route.snapshot.data['matchList'];
   }
 
   modalOpen(bet: number) {

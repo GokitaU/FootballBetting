@@ -171,7 +171,7 @@
                 <h2 class="text-white">Mai mérkőzések</h2>
             </div>
             <div class="col-12">
-                <div class="match-container border border-dark animated fadeIn">
+                <div *ngFor="let last = last;let item of matchList" class="match-container border border-dark animated fadeIn mt-3">
                     <div class="d-flex justify-content-between information-container finishmatch">
                         <div class="mobile-flag">
                             <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
@@ -199,7 +199,7 @@
                         <div class="awayteam flex-fill text-center align-self-center">Horvátország</div>
                     </div>
                     <div class="openmorebetting text-center p-1 border-top border-bottom" data-toggle="collapse" href="#morebettingcollapse" role="button" aria-expanded="false" aria-controls="morebettingcollapse">
-                        További fogadások a mérkőzésre
+                        További fogadások a mérkőzésre {{item._id}}
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </div>
                     <div class="morebetting-container p-2 collapse" id="morebettingcollapse">
@@ -244,7 +244,7 @@
                     </div>
                 </div>
 
-                <div class="match-container border border-dark mt-3 animated fadeIn">
+                <div class="hidden match-container border border-dark mt-3 animated fadeIn">
                     <div class="d-flex justify-content-between information-container">
                         <div class="mobile-flag">
                             <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
