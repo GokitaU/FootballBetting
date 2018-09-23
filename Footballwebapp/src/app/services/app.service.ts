@@ -21,15 +21,15 @@ export class AppService {
                     let resp = x;
                     if (resp.success === true) {
                         console.log("Database:: [OK]");
-                        resolve();
+                        resolve(0);
                     } else {
                         console.log("Database:: !!ERROR!! => " + resp.msg);
-                        reject();
+                        resolve(1);
                     }
                 })
                 .catch(err => {
                     console.log("Database:: !!ERROR!! CATCH => " + err.message);
-                    reject();
+                    resolve(1);
                 })
         });
         return promise;

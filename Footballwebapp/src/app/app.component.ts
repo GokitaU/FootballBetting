@@ -3,6 +3,7 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationCancel, Naviga
 import { AppService } from './services/app.service';
 import { ModalDirective } from 'angular-bootstrap-md';
 import { DataService } from './services/data.service';
+import { Team } from './models/team.model';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { DataService } from './services/data.service';
 export class AppComponent {
   loading = false;
   msg: string;
+  teams: Team[];
   @ViewChild('messageModal') messageModal: ModalDirective;
 
   constructor(private router: Router, private appService: AppService, private dataService: DataService) {
@@ -21,9 +23,12 @@ export class AppComponent {
   }
 
   async ngOnInit() {
-    this.appService.checkDatabase();
-    let teams = await this.dataService.getTeams();
-    console.log(teams);
+    const databasecheck = await this.appService.checkDatabase();
+    if(databasecheck != 0){
+      this.router.navigate(['servererror']);
+    }else{
+      this.teams = await this.dataService.getTeams();
+    }
   }
 
   msgModal(text: string){

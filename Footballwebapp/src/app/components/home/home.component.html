@@ -1,4 +1,4 @@
-<div id="content">
+<div id="content" class="pb-5 mt-5">
     <div class="container">
         <!-- SLIDER  -->
         <div class="row" *ngIf="isBannerShow">
@@ -167,25 +167,25 @@
         <!-- MÉRKŐZÉSLISTA  -->
         <hr *ngIf="isBannerShow" />
         <div class="row">
-            <div class="col-12 text-center m-3">
+            <div class="col-12 text-center mt-5 mb-2">
                 <h2 class="text-white">Mai mérkőzések</h2>
             </div>
             <div class="col-12">
-                <div *ngFor="let last = last;let item of matchList" class="match-container border border-dark animated fadeIn mt-3">
+                <div *ngFor="let i = index;let last = last;let item of matchList" class="match-container border border-dark animated fadeIn mt-3">
                     <div class="d-flex justify-content-between information-container finishmatch">
                         <div class="mobile-flag">
-                            <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
+                            <img src="./assets/Flags/{{item.teamA.flag}}" alt="flag" class="img-flag">
                         </div>
                         <div class="information align-self-center">1 - 2</div>
                         <div class="mobile-flag">
-                            <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
+                            <img src="./assets/Flags/{{item.teamB.flag}}" alt="flag" class="img-flag">
                         </div>
                     </div>
                     <div class="simplebetting-container d-flex p-2">
-                        <div class="hometeam flex-fill text-center align-self-center">Franciaország</div>
+                        <div class="hometeam flex-fill text-right align-self-center">{{item.teamA.name}}</div>
                         <div class="matchresult flex-fill text-center align-self-center">1</div>
                         <div class="flex-fill text-center">
-                            <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag desktop-flag">
+                            <img src="./assets/Flags/{{item.teamA.flag}}" alt="flag" class="img-flag desktop-flag">
                         </div>
                         <div class="betting flex-fill text-center p-1 d-flex justify-content-around">
                             <button type="button" (click)="modalOpen(1.23)" class="btn btn-sm btn-primary">1.23</button>
@@ -193,87 +193,16 @@
                             <button type="button" (click)="modalOpen(3.23)" class="btn btn-sm btn-primary">3.21</button>
                         </div>
                         <div class="flex-fill text-center">
-                            <img src="./assets/Flags/england.png" alt="flag" class="img-flag desktop-flag">
+                            <img src="./assets/Flags/{{item.teamB.flag}}" alt="flag" class="img-flag desktop-flag">
                         </div>
                         <div class="matchresult flex-fill text-center align-self-center">2</div>
-                        <div class="awayteam flex-fill text-center align-self-center">Horvátország</div>
+                        <div class="awayteam flex-fill text-left align-self-center">{{item.teamB.name}}</div>
                     </div>
-                    <div class="openmorebetting text-center p-1 border-top border-bottom" data-toggle="collapse" href="#morebettingcollapse" role="button" aria-expanded="false" aria-controls="morebettingcollapse">
-                        További fogadások a mérkőzésre {{item._id}}
-                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="morebetting-container p-2 collapse" id="morebettingcollapse">
-                        <p class="morebetting-title">KÉTESÉLY</p>
-                        <div class="morebetting-item d-flex mb-1 row">
-                            <div class="bettingbox flex-fill text-center d-flex border-right col-xs-12 col-sm-12 col-md-4">
-                                <div class="morebetting-text flex-fill align-self-center">Belgium vagy Döntetlen</div>
-                                <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                                </div>
-                            </div>
-                            <div class="bettingbox flex-fill text-center d-flex border-right col-xs-12 col-sm-12 col-md-4">
-                                <div class="morebetting-text flex-fill align-self-center">Belgium vagy Anglia</div>
-                                <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                                </div>
-                            </div>
-                            <div class="bettingbox flex-fill text-center d-flex col-xs-12 col-sm-12 col-md-4">
-                                <div class="morebetting-text flex-fill align-self-center">Döntetlen vagy Anglia</div>
-                                <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <p class="morebetting-title">GÓLSZÁM 0,5</p>
-                        <div class="morebetting-item d-flex mb-1 row">
-                            <div class="bettingbox flex-fill text-center d-flex border-right col-xs-12 col-sm-4">
-                                <div class="morebetting-text flex-fill align-self-center">Kevesebb, mint 0,5</div>
-                                <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                                </div>
-                            </div>
-                            <div class="bettingbox flex-fill text-center d-flex col-xs-12 col-sm-4">
-                                <div class="morebetting-text flex-fill align-self-center">Több, mint 0,5</div>
-                                <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="hidden match-container border border-dark mt-3 animated fadeIn">
-                    <div class="d-flex justify-content-between information-container">
-                        <div class="mobile-flag">
-                            <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag">
-                        </div>
-                        <div class="information align-self-center">Hosszabítás után (2-1)</div>
-                        <div class="mobile-flag">
-                            <img src="./assets/Flags/england.png" alt="flag" class="img-flag">
-                        </div>
-                    </div>
-                    <div class="simplebetting-container d-flex p-2">
-                        <div class="hometeam flex-fill text-center align-self-center">Franciaország</div>
-                        <div class="flex-fill text-center">
-                            <img src="./assets/Flags/belgium.png" alt="flag" class="img-flag desktop-flag">
-                        </div>
-                        <div class="betting flex-fill text-center p-1 d-flex justify-content-around">
-                            <button type="button" class="btn btn-sm btn-primary">1.23</button>
-                            <button type="button" class="btn btn-sm btn-primary">2.23</button>
-                            <button type="button" class="btn btn-sm btn-primary">3.21</button>
-                        </div>
-                        <div class="flex-fill text-center">
-                            <img src="./assets/Flags/england.png" alt="flag" class="img-flag desktop-flag">
-                        </div>
-                        <div class="awayteam flex-fill text-center align-self-center">Horvátország</div>
-                    </div>
-                    <div class="openmorebetting text-center p-1 border-top border-bottom" data-toggle="collapse" href="#morebettingcollapse2" role="button" aria-expanded="false" aria-controls="morebettingcollapse2">
+                    <div class="openmorebetting text-center p-1 border-top border-bottom" (click)="morebetbtn.toggle()">
                         További fogadások a mérkőzésre
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="morebetting-container p-2 collapse" id="morebettingcollapse2">
+                    <div class="morebetting-container p-2 collapse" [mdbCollapse]="isCollapsed" #morebetbtn="bs-collapse">
                         <p class="morebetting-title">KÉTESÉLY</p>
                         <div class="morebetting-item d-flex mb-1 row">
                             <div class="bettingbox flex-fill text-center d-flex border-right col-xs-12 col-sm-12 col-md-4">
@@ -301,13 +230,13 @@
                             <div class="bettingbox flex-fill text-center d-flex border-right col-xs-12 col-sm-4">
                                 <div class="morebetting-text flex-fill align-self-center">Kevesebb, mint 0,5</div>
                                 <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm bg-light border-light">1.23</button>
+                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
                                 </div>
                             </div>
                             <div class="bettingbox flex-fill text-center d-flex col-xs-12 col-sm-4">
                                 <div class="morebetting-text flex-fill align-self-center">Több, mint 0,5</div>
                                 <div class="flex-fill align-self-center">
-                                    <button type="button" class="btn btn-sm bg-light border-light">1.23</button>
+                                    <button type="button" class="btn btn-sm btn-primary">1.23</button>
                                 </div>
                             </div>
                         </div>

@@ -18,7 +18,9 @@ const routes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
-  { path: '**', component: PagenotfoundComponent }
+  { path: 'notfound', component: PagenotfoundComponent },
+  { path: '**', component: PagenotfoundComponent },
+  { path: 'servererror', component: PagenotfoundComponent }
 ];
 
 @NgModule({

@@ -40,6 +40,7 @@
 .hometeam {
     overflow-wrap: break-word;
     overflow: auto;
+    max-width: 140px;
     font-size: 1.1em;
     font-weight: bold;
 }
@@ -55,6 +56,7 @@
 .awayteam {
     overflow-wrap: break-word;
     overflow: auto;
+    max-width: 140px;
     font-size: 1.1em;
     font-weight: bold;
 }
