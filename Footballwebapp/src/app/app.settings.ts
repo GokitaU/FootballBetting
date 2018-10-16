@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class Settings {
-    BaseURL: string = "http://beerlak.com";
+    BaseURL: string = "http://mokasfoci.hu";
 }

@@ -4,6 +4,7 @@
     width: 100%;
     background-position: center;
     background-image: url("/assets/img/bg.jpg");
+    margin-top: 20px;
 }
 
 .bg-light {
@@ -106,6 +107,18 @@
 .front-match-bets {
     width: 20%;
     margin: 0 auto;
+}
+
+.betInfo {
+    text-align: center;
+    border: 1px solid #0000003b;
+    padding: 10px;
+    background-color: #a70d0dd9;
+    color: white;
+}
+
+.betInfo .lead {
+    font-size: 15px;
 }
 
 @media (max-width: 768px) {

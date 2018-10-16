@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HomeResolverService } from './services/home.resolver.service';
 import { ProfileComponent } from './components/_webapp/profile/profile.component';
+import { ServernotfoundComponent } from './components/servernotfound/servernotfound.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,8 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'notfound', component: PagenotfoundComponent },
-  { path: '**', component: PagenotfoundComponent },
-  { path: 'servererror', component: PagenotfoundComponent }
+  { path: 'servererror', component: ServernotfoundComponent },
+  { path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({

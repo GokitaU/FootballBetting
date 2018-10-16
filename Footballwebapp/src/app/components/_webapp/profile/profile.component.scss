@@ -1,0 +1,13 @@
+$text_colorActive: rgb(212, 209, 209);
+$text_color: white;
+.form-control {
+    color: $text_color;
+}
+
+label {
+    color: $text_color;
+}
+
+label.active {
+    color: $text_colorActive !important
+}

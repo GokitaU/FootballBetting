@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ProfileComponent } from './components/_webapp/profile/profile.component';
+import { ServernotfoundComponent } from './components/servernotfound/servernotfound.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProfileComponent } from './components/_webapp/profile/profile.component
     HomeComponent,
     LoginComponent,
     PagenotfoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    ServernotfoundComponent
   ],
   imports: [
     BrowserModule,

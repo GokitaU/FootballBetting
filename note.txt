@@ -11,9 +11,82 @@ ng g @angular/material:material-dashboard --name=my-dashboard
 ng g @angular/material:material-table --name=my-table
 
 -- ADD REDUX --
+// Install:
 npm install --save @ngrx/store
 npm i rxjs-compat
 
+- app
+    - store
+        - reducers
+            - appReducer.ts
+            - index.ts
+        - actions
+            - appActions.ts
+
+// Add ngrx module and reducers to app.module.ts:
+import {StoreModule} from '@ngrx/store';
+import {reducers} from './store/reducers'
+imports:[
+    StoreModule.forRoot(reducers,{})
+] 
+
+// index.ts:
+import {reducers, appReducerState} from './appReducer'
+import {ActionReducerMap} from '@ngrx/store';
+
+interface AppState{
+    appReducer: appReducerState
+}
+
+export const reducers: ActionReducerMap<AppState> = {
+    appReducer: reducers
+}
+
+// appReducer.ts:
+import {ADD_VARIABLE, MINUS_VARIABLE} from '../actions/appActions';
+
+export interface appReducerState{
+    testVariable: number
+}
+
+const initialState: appReducerState = {
+    testVariable: 0
+}
+
+export function reducers(state=initialState, action): appReducerState{
+    switch(action.type){
+        case ADD_VARIABLE:
+            return {
+                ...state,
+                testVariable++
+            }
+        case MINUS_VARIABLE:
+            return {
+                ...state,
+                testVariable--
+            }    
+    }
+    return state
+}
+
+// appActions.ts
+export const ADD_VARIABLE = "ADD";
+export const MINUS_VARIABLE = "MINUS";
+
+// USE IT: testService.ts:
+import {Store} from '@ngrx/store';
+constructor(private store: Store<any>){}
+getState(){
+    return this.store.select('appReducer');
+}
+
+// USE IT: testComponent.ts
+constructor(private service:testService){}
+ngOninit(){
+    this.service.getState().subscribe(state=>{console.log(state)});
+}
+
+--- GENERATE GUARD SERVICE --
 ng g guard auth --> guard service generálás
 npm i angular-bootstrap-md --save
 

@@ -188,9 +188,9 @@
                             <img src="./assets/Flags/{{item.teamA.flag}}" alt="flag" class="img-flag desktop-flag">
                         </div>
                         <div class="betting flex-fill text-center p-1 d-flex justify-content-around">
-                            <button type="button" (click)="modalOpen(1.23)" class="btn btn-sm btn-primary">1.23</button>
-                            <button type="button" (click)="modalOpen(2.23)" class="btn btn-sm btn-primary">2.23</button>
-                            <button type="button" (click)="modalOpen(3.23)" class="btn btn-sm btn-primary">3.21</button>
+                            <button type="button" (click)="modalOpen(item,1.23,1)" class="btn btn-sm btn-primary">1.23</button>
+                            <button type="button" (click)="modalOpen(item,2.23,x)" class="btn btn-sm btn-primary">2.23</button>
+                            <button type="button" (click)="modalOpen(item,3.21,2)" class="btn btn-sm btn-primary">3.21</button>
                         </div>
                         <div class="flex-fill text-center">
                             <img src="./assets/Flags/{{item.teamB.flag}}" alt="flag" class="img-flag desktop-flag">
@@ -258,14 +258,30 @@
                 <button type="button" class="close pull-right" aria-label="Close" (click)="bettingModal.hide()">
                   <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+                <h5 class="modal-title w-100">Új szelvény</h5>
             </div>
             <div class="modal-body">
-                {{bet}}
+                <div class="row">
+                    <div class="col">
+                        <div class="createBetForm">
+                            <div class="betInfo">
+                                <h5>{{modalCoupon?.teamA.name}} - {{modalCoupon?.teamB.name}}</h5>
+                                <div class="lead">Tipp: {{modalCoupon?.teamA.name}}</div>
+                            </div>
+                            <hr class="w-50" />
+                            <form [formGroup]="createBetFormGroup" class="form-group">
+                                <label>Feltett tét:</label>
+                                <select formControlName="createBetControl" class="form-control">
+                                    <option [value]="betvalue" *ngFor="let betvalue of betValues">{{betvalue}}</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="bettingModal.hide()" mdbWavesEffect>Close</button>
-                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>
+                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="bettingModal.hide()" mdbWavesEffect>Mégsem</button>
+                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Fogadok</button>
             </div>
         </div>
     </div>
