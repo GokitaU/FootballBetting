@@ -5,6 +5,7 @@ import { Match } from '../../models/match.model';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { ModalCoupon } from '../../interfaces/modalcoupon.interface';
 import { Team } from '../../models/team.model';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   betValues: Array<number> = [];
   @ViewChild('bettingModal') bettingModal: ModalDirective;
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder) { 
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private store: Store<any>) { 
   }
 
   ngOnInit() {
@@ -35,10 +36,25 @@ export class HomeComponent implements OnInit {
     this.createBetFormGroup = this.fb.group({
       createBetControl: [200]
     });
+
+    this.store.pipe().subscribe(
+      data => {
+        console.log(data);
+      }
+    )
   }
 
   modalOpen(match: Match, bet: number, odds: number) {
     this.modalCoupon = match;
     this.bettingModal.show();
   }
+
+  createBetting(){
+    console.log("Fogadás létrehozása.");
+    this.store.dispatch({
+      type: 'SCORE_REFRESH',
+      payload: 23
+    });
+  }
+
 }

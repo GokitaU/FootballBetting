@@ -20,6 +20,9 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { ProfileComponent } from './components/_webapp/profile/profile.component';
 import { ServernotfoundComponent } from './components/servernotfound/servernotfound.component';
 
+/* NgRx */
+import {StoreModule} from '@ngrx/store';
+import { reducers } from './state/reducers';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { ServernotfoundComponent } from './components/servernotfound/servernotfo
     BrowserAnimationsModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot(reducers),
     MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
