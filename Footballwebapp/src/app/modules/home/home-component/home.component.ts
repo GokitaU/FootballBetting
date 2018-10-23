@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
 import { ActivatedRoute } from '@angular/router';
-import { Match } from '../../models/match.model';
+import { Match } from '../../../models/match.model';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import { ModalCoupon } from '../../interfaces/modalcoupon.interface';
-import { Team } from '../../models/team.model';
+import { ModalCoupon } from '../../../interfaces/modalcoupon.interface';
+import { Team } from '../../../models/team.model';
 import { Store, select } from '@ngrx/store';
 
 @Component({
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   isBannerShow: boolean;
   createBetFormGroup: FormGroup;
   betValues: Array<number> = [];
+  storeSubs: any;
   @ViewChild('bettingModal') bettingModal: ModalDirective;
 
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private store: Store<any>) { 
@@ -37,11 +38,15 @@ export class HomeComponent implements OnInit {
       createBetControl: [200]
     });
 
-    this.store.pipe().subscribe(
+    this.storeSubs = this.store.pipe(select('app')).subscribe(
       data => {
         console.log(data);
       }
     )
+  }
+
+  ngOnDestroy(){
+    this.storeSubs.unsubscribe();
   }
 
   modalOpen(match: Match, bet: number, odds: number) {
@@ -53,7 +58,7 @@ export class HomeComponent implements OnInit {
     console.log("Fogadás létrehozása.");
     this.store.dispatch({
       type: 'SCORE_REFRESH',
-      payload: 23
+      payload: this.createBetFormGroup.value.createBetControl
     });
   }
 

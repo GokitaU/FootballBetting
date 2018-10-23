@@ -1,0 +1,57 @@
+<div id="content" class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 mb-2">
+                <h2 class="text-white">Regisztráció</h2> {{registrationForm.valid}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-md-0 mb-5">
+                <form novalidate [formGroup]="registrationForm" (ngSubmit)="registration()" id=" contact-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <i class="fa fa-user prefix bet-green-text"></i>
+                                <input type="text" id="username" formControlName="username" required class="form-control validate" mdbInputDirective>
+                                <label data-error="Kötelezően meg kell adnod" data-success="right" for="username">Felhasználónév</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="md-form mb-0 ">
+                                <i class="fa fa-envelope prefix bet-green-text "></i>
+                                <input type="text" id="email" formControlName="email" required class="form-control" mdbInputDirective>
+                                <label data-error="Kötelezően meg kell adnod" data-success="right" for="email">Email cím</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 ">
+                            <div class="md-form mb-0 ">
+                                <i class="fa fa-lock prefix bet-green-text "></i>
+                                <input type="password" id="password" formControlName="password" required class="form-control validate" mdbInputDirective>
+                                <label data-error="Kötelezően meg kell adnod" data-success="right" for="password">Jelszó</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <i class="fa fa-lock prefix bet-green-text"></i>
+                                <input type="password" id="confirmpassword" formControlName="confirmpassword" required class="form-control validate" mdbInputDirective>
+                                <label data-error="Kötelezően meg kell adnod" data-success="right" for="confirmpassword">Jelszó újra</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-success" (click)="registration()">Regisztrálok</a>
+                        </div>
+                        <div class="col-md-12 mt-3 text-center">
+                            <a [routerLink]="[ '/home']" class="grey-text">
+                                Vissza a főoldalra 
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

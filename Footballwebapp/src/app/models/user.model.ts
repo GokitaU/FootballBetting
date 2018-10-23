@@ -5,14 +5,14 @@ export class User {
     teamid?: Team;
     winteamid?: Team;
     regdate?: String;
-    username?: String;
-    name: String;
+    username: String;
+    name?: String;
     email?: String;
     password?: String;
-    score: Number;
+    score?: Number;
     nettoscore?: Number;
     winteamcount?: Number;
-    avatar: String;
+    avatar?: String;
     aktiv?: Number;
     role?: String
 }

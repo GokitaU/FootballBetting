@@ -21,6 +21,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    min-height: 800px;
     z-index: -1;
     background-repeat: no-repeat;
     background-image: linear-gradient(to right top, #051937, #004469, #007389, #00a38d, #64cf7b);
@@ -28,6 +29,10 @@ body {
 
 .hidden {
     display: none;
+}
+
+.bet-green-text {
+    color: #00c851 !important;
 }
 
 .modal-header {
@@ -53,4 +58,13 @@ footer.page-footer {
 
 .footer-copyright {
     height: 100px;
+}
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 768px) {
+    .bg {
+        min-height: 0;
+    }
 }
